@@ -1,0 +1,32 @@
+# Render Blueprint: New + > Blueprint > pick this repo. Secrets (sync: false) are entered in the dashboard, never stored in git.
+services:
+  - type: web
+    name: campus-events
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /api/status
+    envVars:
+      - key: NODE_VERSION
+        value: 22.12.0
+      - key: SESSION_SECRET
+        generateValue: true
+      - key: ADMIN_PASSWORD
+        sync: false
+      - key: GEMINI_API_KEY
+        sync: false
+      - key: GEMINI_MODEL
+        value: gemini-3.8-flash
+      - key: GOOGLE_CLIENT_ID
+        sync: false
+      - key: GOOGLE_CLIENT_SECRET
+        sync: false
+      - key: GOOGLE_REFRESH_TOKEN
+        sync: false
+      - key: GOOGLE_CALENDAR_ID
+        value: primary
+      - key: EVENT_TIMEZONE
+        value: Asia/Kolkata
+      - key: EVENT_DURATION_MINUTES
+        value: "120"
