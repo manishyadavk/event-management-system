@@ -1,0 +1,14 @@
+node_modules/
+.env
+*.db
+*.db-journal
+*.db-wal
+*.db-shm
+
+# secrets / editor leftovers
+*.env
+.env.*
+!.env.example
+*.swp
+*.swo
+.*.mjs
