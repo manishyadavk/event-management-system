@@ -9,7 +9,7 @@ services:
     healthCheckPath: /api/status
     envVars:
       - key: NODE_VERSION
-        value: 22.12.0
+        value: 24.13.0
       - key: SESSION_SECRET
         generateValue: true
       - key: ADMIN_PASSWORD
